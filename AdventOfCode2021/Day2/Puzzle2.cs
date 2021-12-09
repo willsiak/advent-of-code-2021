@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net.Http.Headers;
 
 namespace AdventOfCode2021.Day2
 {
@@ -16,15 +17,20 @@ namespace AdventOfCode2021.Day2
             );
         }
 
-        internal void SolveTask1()
+        internal void SolveTask1() => FollowDirectionsFrom(new StaticPosition(0, 0));
+        
+        internal void SolveTask2() => FollowDirectionsFrom(new DynamicPosition(0, 0, 0));
+
+        private void FollowDirectionsFrom(Position startingPosition)
         {
             var finalPosition = Directions.Aggregate(
-                new Position(0, 0),
+                startingPosition,
                 (position, nextMovement) => position.Move(nextMovement)
             );
-
+            
             Console.WriteLine("Horizontal position: " + finalPosition.Horizontal);
             Console.WriteLine("Depth: " + finalPosition.Depth);
+            Console.WriteLine("---");
         }
     }
 }

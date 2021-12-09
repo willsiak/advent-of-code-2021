@@ -8,6 +8,7 @@ namespace AdventOfCode2021
         {
             var puzzle = new Puzzle2("Day2/directions.txt");
             puzzle.SolveTask1();
+            puzzle.SolveTask2();
         }
     }
 }
