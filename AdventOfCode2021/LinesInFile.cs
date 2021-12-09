@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 
 namespace AdventOfCode2021
 {
@@ -13,9 +12,5 @@ namespace AdventOfCode2021
         {
             _lazyLines = new(() => File.ReadAllLines(path));
         }
-
-        public int[] AsIntegers() =>
-            Lines.Select(it => Convert.ToInt32(it))
-                .ToArray();
     }
 }

@@ -4,18 +4,11 @@ using System.Net.Http.Headers;
 
 namespace AdventOfCode2021.Day2
 {
-    internal class Puzzle2
+    internal class Puzzle2 : PuzzleWithStringInput
     {
-        private readonly Lazy<Movement[]> _lazyDirections;
-        private Movement[] Directions => _lazyDirections.Value;
+        public Puzzle2(string inputPath) : base(inputPath) { }
 
-        public Puzzle2(string inputPath)
-        {
-            _lazyDirections = new(
-                () => new LinesInFile(inputPath).Lines
-                    .Select(it => new Movement(it)).ToArray()
-            );
-        }
+        private Movement[] Movements => Lines.Select(it => new Movement(it)).ToArray();
 
         internal void SolveTask1() => FollowDirectionsFrom(new StaticPosition(0, 0));
         
@@ -23,7 +16,7 @@ namespace AdventOfCode2021.Day2
 
         private void FollowDirectionsFrom(Position startingPosition)
         {
-            var finalPosition = Directions.Aggregate(
+            var finalPosition = Movements.Aggregate(
                 startingPosition,
                 (position, nextMovement) => position.Move(nextMovement)
             );

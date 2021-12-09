@@ -3,15 +3,11 @@ using System.Linq;
 
 namespace AdventOfCode2021.Day1
 {
-    internal class Puzzle1
+    internal class Puzzle1 : PuzzleWithStringInput
     {
-        private readonly Lazy<int[]> _lazyDepths;
-        private int[] Depths => _lazyDepths.Value;
+        public Puzzle1(string inputPath) : base(inputPath) { }
 
-        public Puzzle1(string inputPath)
-        {
-            _lazyDepths = new(() => new LinesInFile(inputPath).AsIntegers());
-        }
+        private int[] Depths => Lines.AsIntegers();
 
         internal void SolveTask1() =>
             IncreasesIn(DepthChanges.ByComparingWindows(Depths, windowSize: 1));
