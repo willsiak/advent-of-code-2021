@@ -6,7 +6,7 @@ namespace AdventOfCode2021
 {
     internal sealed class LinesInFile
     {
-        private Lazy<string[]> _lazyLines;
+        private readonly Lazy<string[]> _lazyLines;
         public string[] Lines => _lazyLines.Value;
 
         public LinesInFile(string path)
