@@ -1,4 +1,4 @@
-﻿using AdventOfCode2021.Day3;
+﻿using AdventOfCode2021.Day4;
 
 namespace AdventOfCode2021
 {
@@ -6,9 +6,8 @@ namespace AdventOfCode2021
     {
         static void Main(string[] args)
         {
-            var puzzle = new Puzzle3("Day3/diagnostic_report.txt");
+            var puzzle = new Puzzle4("Day4/boards.txt", "Day4/numbers.txt");
             puzzle.SolveTask1();
-            puzzle.SolveTask2();
         }
     }
 }
