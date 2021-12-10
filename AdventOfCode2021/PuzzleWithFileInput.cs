@@ -2,12 +2,12 @@
 
 namespace AdventOfCode2021
 {
-    internal abstract class PuzzleWithStringInput
+    internal abstract class PuzzleWithFileInput
     {
         private readonly LinesInFile _linesInFile;
         protected string[] Lines => _linesInFile.Lines;
 
-        protected PuzzleWithStringInput(string inputPath)
+        protected PuzzleWithFileInput(string inputPath)
         {
             _linesInFile = new LinesInFile(inputPath);
         }

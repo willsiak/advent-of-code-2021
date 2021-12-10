@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace AdventOfCode2021.Day1
 {
-    internal class Puzzle1 : PuzzleWithStringInput
+    internal class Puzzle1 : PuzzleWithFileInput
     {
         public Puzzle1(string inputPath) : base(inputPath) { }
 

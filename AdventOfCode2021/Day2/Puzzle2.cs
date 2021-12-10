@@ -4,7 +4,7 @@ using System.Net.Http.Headers;
 
 namespace AdventOfCode2021.Day2
 {
-    internal class Puzzle2 : PuzzleWithStringInput
+    internal class Puzzle2 : PuzzleWithFileInput
     {
         public Puzzle2(string inputPath) : base(inputPath) { }
 

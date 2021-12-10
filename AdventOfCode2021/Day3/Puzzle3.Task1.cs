@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AdventOfCode2021.Day3
 {
-    internal sealed partial class Puzzle3 : PuzzleWithStringInput
+    internal sealed partial class Puzzle3 : PuzzleWithFileInput
     {
         public Puzzle3(string inputPath) : base(inputPath) { }
 
